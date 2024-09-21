@@ -45,31 +45,31 @@ bool_vars = [
 
 async def load_config():
 
-    BOT_TOKEN = environ.get('BOT_TOKEN', '')
+    BOT_TOKEN = environ.get('BOT_TOKEN', '7335427167:AAHrhReCphZJSLP_YgG9lGo66-bTU0EF6GE')
     if len(BOT_TOKEN) == 0:
         BOT_TOKEN = config_dict['BOT_TOKEN']
 
-    TELEGRAM_API = environ.get('TELEGRAM_API', '')
+    TELEGRAM_API = environ.get('TELEGRAM_API', '11973721')
     if len(TELEGRAM_API) == 0:
         TELEGRAM_API = config_dict['TELEGRAM_API']
     else:
         TELEGRAM_API = int(TELEGRAM_API)
 
-    TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '')
+    TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '5264bf4663e9159565603522f58d3c18')
     if len(TELEGRAM_HASH) == 0:
         TELEGRAM_HASH = config_dict['TELEGRAM_HASH']
 
     BOT_MAX_TASKS = environ.get('BOT_MAX_TASKS', '')
     BOT_MAX_TASKS = int(BOT_MAX_TASKS) if BOT_MAX_TASKS.isdigit() else ''
 
-    OWNER_ID = environ.get('OWNER_ID', '')
+    OWNER_ID = environ.get('OWNER_ID', '1391556668')
     OWNER_ID = config_dict['OWNER_ID'] if len(OWNER_ID) == 0 else int(OWNER_ID)
 
     GROUPS_EMAIL = environ.get('GROUPS_EMAIL', '')
     if len(GROUPS_EMAIL) != 0:
         GROUPS_EMAIL = GROUPS_EMAIL.lower()
 
-    DATABASE_URL = environ.get('DATABASE_URL', '')
+    DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://KarthikMovies:KarthikUK007@cluster0.4l5byki.mongodb.net/?retryWrites=true&w=majority')
     if len(DATABASE_URL) == 0:
         DATABASE_URL = ''
 
@@ -187,7 +187,7 @@ async def load_config():
     USE_SERVICE_ACCOUNTS = environ.get('USE_SERVICE_ACCOUNTS', '')
     USE_SERVICE_ACCOUNTS = USE_SERVICE_ACCOUNTS.lower() == 'true'
 
-    AS_DOCUMENT = environ.get('AS_DOCUMENT', '')
+    AS_DOCUMENT = environ.get('AS_DOCUMENT', 'true')
     AS_DOCUMENT = AS_DOCUMENT.lower() == 'true'
 
     SHOW_MEDIAINFO = environ.get('SHOW_MEDIAINFO', '')
@@ -203,11 +203,11 @@ async def load_config():
     else:
         await create_subprocess_shell('gunicorn web.wserver:app --bind 0.0.0.0:80 --worker-class gevent')
 
-    UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
+    UPSTREAM_REPO = environ.get('UPSTREAM_REPO', 'https://github.com/Star-Bots-Tamil/Metadata-Leech-Bot')
     if len(UPSTREAM_REPO) == 0:
         UPSTREAM_REPO = ''
 
-    UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', '')
+    UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', 'main')
     if len(UPSTREAM_BRANCH) == 0:
         UPSTREAM_BRANCH = 'main'
 
@@ -253,7 +253,7 @@ async def load_config():
     IMAGES = (IMAGES.replace("'", '').replace('"', '').replace(
         '[', '').replace(']', '').replace(",", "")).split()
 
-    SET_COMMANDS = environ.get('SET_COMMANDS', '')
+    SET_COMMANDS = environ.get('SET_COMMANDS', 'true')
     SET_COMMANDS = SET_COMMANDS.lower() == 'true'
 
     TOKEN_TIMEOUT = environ.get('TOKEN_TIMEOUT', '')
