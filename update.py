@@ -41,14 +41,14 @@ except:
 
 load_dotenv('config.env', override=True)
 
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '7335427167:AAHrhReCphZJSLP_YgG9lGo66-bTU0EF6GE')
 if len(BOT_TOKEN) == 0:
     error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
 
 bot_id = BOT_TOKEN.split(':', 1)[0]
 
-DATABASE_URL = environ.get('DATABASE_URL', '')
+DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://KarthikMovies:KarthikUK007@cluster0.4l5byki.mongodb.net/?retryWrites=true&w=majority')
 if len(DATABASE_URL) == 0:
     DATABASE_URL = None
 
@@ -62,7 +62,7 @@ if DATABASE_URL:
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
-    UPSTREAM_REPO = 'https://github.com/5hojib/Aeon'
+    UPSTREAM_REPO = 'https://github.com/Star-Bots-Tamil/Metadata-Leech-Bot'
 
 UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', '')
 if len(UPSTREAM_BRANCH) == 0:
